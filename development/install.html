@@ -70,17 +70,15 @@ PyGraphviz
 <li><a class="reference internal" href="#quick-install">Quick Install</a></li>
 <li><a class="reference internal" href="#installing-from-source">Installing from Source</a><ul>
 <li><a class="reference internal" href="#source-archive-file">Source Archive File</a></li>
-<li><a class="reference internal" href="#svn-repository">SVN Repository</a></li>
+<li><a class="reference internal" href="#github">Github</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#requirements">Requirements</a><ul>
-<li><a class="reference internal" href="#graphviz">GraphViz</a></li>
-<li><a class="reference internal" href="#python">Python</a><ul>
-<li><a class="reference internal" href="#windows">Windows</a></li>
-<li><a class="reference internal" href="#osx">OSX</a></li>
-<li><a class="reference internal" href="#linux">Linux</a></li>
+<li><a class="reference internal" href="#python">Python</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#id1">Requirements</a><ul>
+<li><a class="reference internal" href="#graphviz">GraphViz</a></li>
 </ul>
 </li>
 </ul>
@@ -121,11 +119,20 @@ PyGraphviz
 <p>Get PyGraphviz from the Python Package Index at
 <a class="reference external" href="http://pypi.python.org/pypi/pygraphviz">http://pypi.python.org/pypi/pygraphviz</a></p>
 <p>or install it with:</p>
+<div class="highlight-python"><pre>pip install pygraphviz</pre>
+</div>
+<p>and an attempt will be made to find and install an appropriate version
+that matches your operating system and Python version.</p>
+<p>You can install the development version (at github.com) with:</p>
+<div class="highlight-python"><pre>pip install git://github.com/pygraphviz/pygraphviz.git#egg=pygraphviz</pre>
+</div>
+<p>Get PyGraphviz from the Python Package Index at
+<a class="reference external" href="http://pypi.python.org/pypi/pygraphviz">http://pypi.python.org/pypi/pygraphviz</a></p>
+<p>or install it with:</p>
 <div class="highlight-python"><pre>easy_install pygraphviz</pre>
 </div>
 <p>and an attempt will be made to find and install an appropriate version
 that matches your operating system and Python version.</p>
-<p>More download options are at <a class="reference external" href="http://networkx.lanl.gov/download.html">http://networkx.lanl.gov/download.html</a></p>
 </div>
 <div class="section" id="installing-from-source">
 <h2>Installing from Source<a class="headerlink" href="#installing-from-source" title="Permalink to this headline">¶</a></h2>
@@ -143,37 +150,52 @@ Subversion repository.</p>
 </ol>
 </div></blockquote>
 </div>
-<div class="section" id="svn-repository">
-<h3>SVN Repository<a class="headerlink" href="#svn-repository" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="github">
+<h3>Github<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ol class="arabic">
-<li><p class="first">Check out the PyGraphviz trunk:</p>
-<div class="highlight-python"><pre>svn co https://networkx.lanl.gov/svn/pygraphviz/trunk pygraphviz</pre>
-</div>
+<li><p class="first">Clone the pygraphviz repostitory</p>
+<blockquote>
+<div><p>git clone <a class="reference external" href="https://github.com/pygraphviz/pygraphviz.git">https://github.com/pygraphviz/pygraphviz.git</a></p>
+</div></blockquote>
 </li>
-<li><p class="first">Change directory to &#8220;pygraphviz&#8221;</p>
-</li>
-<li><p class="first">Run &#8220;python setup.py install&#8221; to build and install</p>
-</li>
-<li><p class="first">(optional) Run &#8220;python setup_egg.py nosetests&#8221; to execute the tests</p>
-</li>
+</ol>
+<p>(see <a class="reference external" href="https://github.com/pygraphviz/pygraphviz/">https://github.com/pygraphviz/pygraphviz/</a> for other options)</p>
+<ol class="arabic simple" start="2">
+<li>Change directory to &#8220;pygraphviz&#8221;</li>
+<li>Run &#8220;python setup.py install&#8221; to build and install</li>
+<li>(optional) Run &#8220;python setup_egg.py nosetests&#8221; to execute the tests</li>
 </ol>
 </div></blockquote>
 <p>If you don&#8217;t have permission to install software on your
 system, you can install into another directory using
-the &#8211;prefix or &#8211;home flags to setup.py.</p>
+the &#8211;user, &#8211;prefix, or &#8211;home flags to setup.py.</p>
 <p>For example</p>
 <div class="highlight-python"><pre>python setup.py install --prefix=/home/username/python
 or
-python setup.py install --home=~</pre>
+python setup.py install --home=~
+or
+python setup.py install --user</pre>
 </div>
 <p>If you didn&#8217;t install in the standard Python site-packages directory
 you will need to set your PYTHONPATH variable to the alternate location.
-See <a class="reference external" href="http://docs.python.org/inst/search-path.html">http://docs.python.org/inst/search-path.html</a> for further details.</p>
+Seehttp://docs.python.org/2/install/index.html#search-path for further details.</p>
 </div>
 </div>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python">
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<p>To use PyGraphviz you need Python version 2.6.x or 2.7.x.
+PyGraphviz does not work with Python 3</p>
+<p>The easiest way to get Python and most optional packages is to install
+the Enthought Python distribution &#8220;Canopy&#8221;
+<a class="reference external" href="https://www.enthought.com/products/canopy/">https://www.enthought.com/products/canopy/</a></p>
+<p>There are several other distributions that contain the key packages you need for scientific computing.  See the following link for a list: <a class="reference external" href="http://scipy.org/install.html">http://scipy.org/install.html</a></p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Requirements<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="graphviz">
 <h3>GraphViz<a class="headerlink" href="#graphviz" title="Permalink to this headline">¶</a></h3>
 <p>To use PyGraphviz you need GraphViz version 2.16 or later.
@@ -184,42 +206,6 @@ release available for best results.</p>
 <li>Official site: <a class="reference external" href="http://www.graphviz.org">http://www.graphviz.org</a></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="python">
-<h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
-<p>To use PyGraphviz you need Python version 2.4 or later <a class="reference external" href="http://www.python.org/">http://www.python.org/</a></p>
-<p>The easiest way to get Python and most optional packages is to install
-the Enthought Python distribution
-<a class="reference external" href="http://www.enthought.com/products/epd.php">http://www.enthought.com/products/epd.php</a></p>
-<p>Other options are</p>
-<div class="section" id="windows">
-<h4>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h4>
-<blockquote>
-<div><ul class="simple">
-<li>Official Python site version:  <a class="reference external" href="http://www.python.org/download/">http://www.python.org/download/</a></li>
-<li>ActiveState version:  <a class="reference external" href="http://activestate.com/Products/ActivePython/">http://activestate.com/Products/ActivePython/</a></li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="osx">
-<h4>OSX<a class="headerlink" href="#osx" title="Permalink to this headline">¶</a></h4>
-<p>OSX 10.5 ships with Python version 2.5.  If you
-have an older version we encourage you to download
-a newer release. Pre-built Python packages are available from</p>
-<blockquote>
-<div><ul class="simple">
-<li>Official Python site version  <a class="reference external" href="http://www.python.org/download/">http://www.python.org/download/</a></li>
-<li>Pythonmac  <a class="reference external" href="http://www.pythonmac.org/packages/">http://www.pythonmac.org/packages/</a></li>
-<li>ActiveState <a class="reference external" href="http://activestate.com/Products/ActivePython/">http://activestate.com/Products/ActivePython/</a></li>
-</ul>
-</div></blockquote>
-<p>If you are using Fink or MacPorts, Python is available through both
-of those package systems.</p>
-</div>
-<div class="section" id="linux">
-<h4>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h4>
-<p>Python is included in all major Linux distributions</p>
-</div>
 </div>
 </div>
 </div>
