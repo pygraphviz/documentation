@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>AGraph Class &mdash; PyGraphviz 1.4.dev documentation</title>
+    <title>AGraph Class &#8212; PyGraphviz 1.4rc1 documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.4.dev',
+        VERSION:     '1.4rc1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -24,15 +24,19 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within PyGraphviz 1.4.dev documentation"
+          title="Search within PyGraphviz 1.4rc1 documentation"
           href="../_static/opensearch.xml"/>
-    <link rel="top" title="PyGraphviz 1.4.dev documentation" href="../index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="PyGraphviz 1.4rc1 documentation" href="../index.html" />
     <link rel="up" title="Reference" href="index.html" />
     <link rel="next" title="FAQ" href="faq.html" />
     <link rel="prev" title="Reference" href="index.html" />
    
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
   <body role="document">
@@ -41,8 +45,6 @@ PyGraphviz
 </div>
 
 
-<p>This documentation is for version <b>1.4.dev</b>, which is
-  not released yet.</p>
 
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -60,14 +62,11 @@ PyGraphviz
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -85,25 +84,25 @@ PyGraphviz
 <em class="property">class </em><code class="descname">AGraph</code><span class="sig-paren">(</span><em>thing=None</em>, <em>filename=None</em>, <em>data=None</em>, <em>string=None</em>, <em>handle=None</em>, <em>name=''</em>, <em>strict=True</em>, <em>directed=False</em>, <em>**attr</em><span class="sig-paren">)</span><a class="headerlink" href="#pygraphviz.AGraph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class for Graphviz agraph type.</p>
 <p>Example use</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pygraphviz</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pygraphviz</span> <span class="k">import</span> <span class="o">*</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">(</span><span class="n">directed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">(</span><span class="s">&quot;file.dot&quot;</span><span class="p">)</span>   
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">(</span><span class="n">directed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">(</span><span class="s2">&quot;file.dot&quot;</span><span class="p">)</span>   
 </pre></div>
 </div>
 <p>Graphviz graph keyword parameters are processed so you may add
 them like</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">(</span><span class="n">landscape</span><span class="o">=</span><span class="s">&#39;true&#39;</span><span class="p">,</span><span class="n">ranksep</span><span class="o">=</span><span class="s">&#39;0.1&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">(</span><span class="n">landscape</span><span class="o">=</span><span class="s1">&#39;true&#39;</span><span class="p">,</span><span class="n">ranksep</span><span class="o">=</span><span class="s1">&#39;0.1&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or alternatively</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">graph_attr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">landscape</span><span class="o">=</span><span class="s">&#39;true&#39;</span><span class="p">,</span><span class="n">ranksep</span><span class="o">=</span><span class="s">&#39;0.1&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">graph_attr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">landscape</span><span class="o">=</span><span class="s1">&#39;true&#39;</span><span class="p">,</span><span class="n">ranksep</span><span class="o">=</span><span class="s1">&#39;0.1&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>and</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">node_attr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">edge_attr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">&#39;blue&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">node_attr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">edge_attr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>See <a class="reference external" href="http://www.graphviz.org/doc/info/attrs.html">http://www.graphviz.org/doc/info/attrs.html</a>
@@ -112,7 +111,7 @@ for a list of attributes.</p>
 <p>thing is a generic input type (filename, string, handle to pointer,
 dictionary of dictionaries).  An attempt is made to automaticaly
 detect the type so you may write for example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;1&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;2&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">},</span> <span class="s">&#39;2&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;1&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span> <span class="s">&#39;3&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">},</span> <span class="s">&#39;3&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;2&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}}</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;1&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;2&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;1&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;2&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">=</span><span class="n">AGraph</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">to_string</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">B</span><span class="o">=</span><span class="n">AGraph</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -121,18 +120,18 @@ detect the type so you may write for example:</p>
 </pre></div>
 </div>
 <p>Parameters:</p>
-<div class="highlight-python"><div class="highlight"><pre>name:    Name for the graph
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span>    <span class="n">Name</span> <span class="k">for</span> <span class="n">the</span> <span class="n">graph</span>
 
-strict: True|False (True for simple graphs)
+<span class="n">strict</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span> <span class="p">(</span><span class="kc">True</span> <span class="k">for</span> <span class="n">simple</span> <span class="n">graphs</span><span class="p">)</span>
 
-directed: True|False
+<span class="n">directed</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span>
 
-data: Dictionary of dictionaries or dictionary of lists
-representing nodes or edges to load into initial graph
+<span class="n">data</span><span class="p">:</span> <span class="n">Dictionary</span> <span class="n">of</span> <span class="n">dictionaries</span> <span class="ow">or</span> <span class="n">dictionary</span> <span class="n">of</span> <span class="n">lists</span>
+<span class="n">representing</span> <span class="n">nodes</span> <span class="ow">or</span> <span class="n">edges</span> <span class="n">to</span> <span class="n">load</span> <span class="n">into</span> <span class="n">initial</span> <span class="n">graph</span>
 
-string:  String containing a dot format graph
+<span class="n">string</span><span class="p">:</span>  <span class="n">String</span> <span class="n">containing</span> <span class="n">a</span> <span class="n">dot</span> <span class="nb">format</span> <span class="n">graph</span>
 
-handle:  Swig pointer to an agraph_t data structure
+<span class="n">handle</span><span class="p">:</span>  <span class="n">Swig</span> <span class="n">pointer</span> <span class="n">to</span> <span class="n">an</span> <span class="n">agraph_t</span> <span class="n">data</span> <span class="n">structure</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -141,8 +140,8 @@ handle:  Swig pointer to an agraph_t data structure
 <dd><p>Reverse sufficient edges in digraph to make graph acyclic.
 Modifies existing graph.</p>
 <p>To create a new graph use</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">B</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">acyclic</span><span class="p">(</span><span class="n">copy</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> 
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">B</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">acyclic</span><span class="p">(</span><span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
 </pre></div>
 </div>
 <p>See the graphviz &#8220;acyclic&#8221; program for details of the algorithm.</p>
@@ -162,8 +161,8 @@ Modifies existing graph.</p>
 <p>If u and v are not strings, conversion to a string will be attempted.
 String conversion will work if u and v have valid string representation
 (try str(u) if you are unsure).</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span>  
 <span class="go">[(u&#39;a&#39;, u&#39;b&#39;)]</span>
 </pre></div>
@@ -171,15 +170,15 @@ String conversion will work if u and v have valid string representation
 <p>The optional key argument allows assignment of a key to the
 edge.  This is especially useful to distinguish between
 parallel edges in multi-edge graphs (strict=False).</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">(</span><span class="n">strict</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">,</span><span class="s">&#39;first&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">,</span><span class="s">&#39;second&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>  
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">(</span><span class="n">strict</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;second&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>  
 <span class="go">[(u&#39;a&#39;, u&#39;b&#39;, u&#39;first&#39;), (u&#39;a&#39;, u&#39;b&#39;, u&#39;second&#39;)]</span>
 </pre></div>
 </div>
 <p>Attributes can be added when edges are created or updated after creation</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">&#39;green&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Attributes must be valid strings.</p>
@@ -192,13 +191,13 @@ for a list of attributes.</p>
 <code class="descname">add_edges_from</code><span class="sig-paren">(</span><em>ebunch</em>, <em>**attr</em><span class="sig-paren">)</span><a class="headerlink" href="#pygraphviz.AGraph.add_edges_from" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add nodes to graph from a container ebunch.</p>
 <p>ebunch is a container of edges such as a list or dictionary.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">elist</span><span class="o">=</span><span class="p">[(</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">),(</span><span class="s">&#39;b&#39;</span><span class="p">,</span><span class="s">&#39;c&#39;</span><span class="p">)]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">elist</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">),(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">elist</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Attributes can be added when edges are created or updated after creation</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">elist</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;green&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">elist</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -210,18 +209,18 @@ for a list of attributes.</p>
 <p>If n is not a string, conversion to a string will be attempted.
 String conversion will work if n has valid string representation
 (try str(n) if you are unsure).</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span>  
 <span class="go">[u&#39;a&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c"># will be converted to a string</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># will be converted to a string</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span>  
 <span class="go">[u&#39;a&#39;, u&#39;1&#39;]</span>
 </pre></div>
 </div>
 <p>Attributes can be added to nodes on creation or updated after creation
 (attribute values must be strings)</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>See <a class="reference external" href="http://www.graphviz.org/doc/info/attrs.html">http://www.graphviz.org/doc/info/attrs.html</a>
@@ -234,15 +233,15 @@ for a list of attributes.</p>
 <code class="descname">add_nodes_from</code><span class="sig-paren">(</span><em>nbunch</em>, <em>**attr</em><span class="sig-paren">)</span><a class="headerlink" href="#pygraphviz.AGraph.add_nodes_from" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add nodes from a container nbunch.</p>
 <p>nbunch can be any iterable container such as a list or dictionary</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nlist</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s">&#39;spam&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nlist</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;spam&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nlist</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>  
 <span class="go">[u&#39;1&#39;, u&#39;a&#39;, u&#39;b&#39;, u&#39;spam&#39;]</span>
 </pre></div>
 </div>
 <p>Attributes can be added to nodes on creation or updated after creation</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nlist</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">)</span> <span class="c"># set all nodes in nlist red</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nlist</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span> <span class="c1"># set all nodes in nlist red</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -312,9 +311,9 @@ matching (u,v,key).</p>
 <dd><p>Remove the single node n.</p>
 <p>Attempting to remove a node that isn&#8217;t in the graph will produce
 an error.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">remove_node</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">remove_node</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -324,8 +323,8 @@ an error.</p>
 <code class="descname">delete_nodes_from</code><span class="sig-paren">(</span><em>nbunch</em><span class="sig-paren">)</span><a class="headerlink" href="#pygraphviz.AGraph.delete_nodes_from" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove nodes from a container nbunch.</p>
 <p>nbunch can be any iterable container such as a list or dictionary</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nlist</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s">&#39;spam&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nlist</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;spam&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nlist</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">remove_nodes_from</span><span class="p">(</span><span class="n">nlist</span><span class="p">)</span>
 </pre></div>
@@ -368,7 +367,7 @@ how Graphviz was built)</p>
 be performed.</p>
 <p>Optional prog=[&#8216;neato&#8217;|&#8217;dot&#8217;|&#8217;twopi&#8217;|&#8217;circo&#8217;|&#8217;fdp&#8217;|&#8217;nop&#8217;]
 will use specified graphviz layout method.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">AGraph</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">AGraph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">layout</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -387,12 +386,12 @@ will use specified graphviz layout method.</p>
 <dd><p>Return list of edges in the graph.</p>
 <p>If the optional nbunch (container of nodes) only edges
 adjacent to nodes in nbunch will be returned.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">,</span><span class="s">&#39;d&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">()))</span>  
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">()))</span>  
 <span class="go">[(u&#39;a&#39;, u&#39;b&#39;), (u&#39;c&#39;, u&#39;d&#39;)]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">))</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">))</span>  
 <span class="go">[(u&#39;a&#39;, u&#39;b&#39;)]</span>
 </pre></div>
 </div>
@@ -415,11 +414,11 @@ as an alternative.</p>
 <dd><p>Load a graph from a string in dot format.</p>
 <p>Overwrites any existing graph.</p>
 <p>To make a new graph from a string use</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">=</span><span class="s">&#39;digraph {1 -&gt; 2}&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">=</span><span class="s1">&#39;digraph {1 -&gt; 2}&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">=</span><span class="n">AGraph</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="n">s</span><span class="p">)</span> <span class="c"># specify s is a string</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">=</span><span class="n">AGraph</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>  <span class="c"># s assumed to be a string during initialization</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">=</span><span class="n">AGraph</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="n">s</span><span class="p">)</span> <span class="c1"># specify s is a string</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">=</span><span class="n">AGraph</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>  <span class="c1"># s assumed to be a string during initialization</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -428,10 +427,10 @@ as an alternative.</p>
 <dt id="pygraphviz.AGraph.get_edge">
 <code class="descname">get_edge</code><span class="sig-paren">(</span><em>u</em>, <em>v</em>, <em>key=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pygraphviz.AGraph.get_edge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an edge object (Edge) corresponding to edge (u,v).</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">edge</span><span class="o">=</span><span class="n">G</span><span class="o">.</span><span class="n">get_edge</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>  
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">edge</span><span class="o">=</span><span class="n">G</span><span class="o">.</span><span class="n">get_edge</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>  
 <span class="go">(u&#39;a&#39;, u&#39;b&#39;)</span>
 </pre></div>
 </div>
@@ -447,10 +446,10 @@ as an alternative.</p>
 <dt id="pygraphviz.AGraph.get_node">
 <code class="descname">get_node</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#pygraphviz.AGraph.get_node" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a node object (Node) corresponding to node n.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">node</span><span class="o">=</span><span class="n">G</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">node</span><span class="o">=</span><span class="n">G</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
 <span class="go">a</span>
 </pre></div>
 </div>
@@ -467,9 +466,9 @@ doesn&#8217;t exist.</p>
 <dt id="pygraphviz.AGraph.has_edge">
 <code class="descname">has_edge</code><span class="sig-paren">(</span><em>u</em>, <em>v=None</em>, <em>key=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pygraphviz.AGraph.has_edge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return True an edge u-v is in the graph or False if not.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">has_edge</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">has_edge</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -480,9 +479,9 @@ doesn&#8217;t exist.</p>
 <dt id="pygraphviz.AGraph.has_neighbor">
 <code class="descname">has_neighbor</code><span class="sig-paren">(</span><em>u</em>, <em>v</em>, <em>key=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pygraphviz.AGraph.has_neighbor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return True if u has an edge to v or False if not.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">has_neighbor</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">has_neighbor</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -493,11 +492,11 @@ doesn&#8217;t exist.</p>
 <dt id="pygraphviz.AGraph.has_node">
 <code class="descname">has_node</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#pygraphviz.AGraph.has_node" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return True if n is in the graph or False if not.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">has_node</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">has_node</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;a&#39;</span> <span class="ow">in</span> <span class="n">G</span>  <span class="c"># same as G.has_node(&#39;a&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="n">G</span>  <span class="c1"># same as G.has_node(&#39;a&#39;)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -662,9 +661,9 @@ successors() as an alternative.</p>
 <dd><p>Assign positions to nodes in graph.</p>
 <p>Optional prog=[&#8216;neato&#8217;|&#8217;dot&#8217;|&#8217;twopi&#8217;|&#8217;circo&#8217;|&#8217;fdp&#8217;|&#8217;nop&#8217;]
 will use specified graphviz layout method.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">layout</span><span class="p">()</span> <span class="c"># uses neato</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s">&#39;dot&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">layout</span><span class="p">()</span> <span class="c1"># uses neato</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s1">&#39;dot&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Use keyword args to add additional arguments to graphviz programs.</p>
@@ -791,7 +790,7 @@ predecessors() as an alternative.</p>
 <dd><p>Read graph from dot format file on path.</p>
 <p>path can be a file name or file handle</p>
 <p>use:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">G</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&#39;file.dot&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;file.dot&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -816,9 +815,9 @@ matching (u,v,key).</p>
 <dd><p>Remove the single node n.</p>
 <p>Attempting to remove a node that isn&#8217;t in the graph will produce
 an error.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">remove_node</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">remove_node</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -828,8 +827,8 @@ an error.</p>
 <code class="descname">remove_nodes_from</code><span class="sig-paren">(</span><em>nbunch</em><span class="sig-paren">)</span><a class="headerlink" href="#pygraphviz.AGraph.remove_nodes_from" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove nodes from a container nbunch.</p>
 <p>nbunch can be any iterable container such as a list or dictionary</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nlist</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s">&#39;spam&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nlist</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;spam&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nlist</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">remove_nodes_from</span><span class="p">(</span><span class="n">nlist</span><span class="p">)</span>
 </pre></div>
@@ -846,12 +845,6 @@ an error.</p>
 <dt id="pygraphviz.AGraph.reverse">
 <code class="descname">reverse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pygraphviz.AGraph.reverse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return copy of directed graph with edge directions reversed.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="pygraphviz.AGraph.size">
-<code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pygraphviz.AGraph.size" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the number of edges in the graph.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -943,8 +936,8 @@ edges u-&gt;v and v-&gt;u.</p>
 <code class="descname">tred</code><span class="sig-paren">(</span><em>args=''</em>, <em>copy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pygraphviz.AGraph.tred" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transitive reduction of graph.  Modifies existing graph.</p>
 <p>To create a new graph use</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">B</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">tred</span><span class="p">(</span><span class="n">copy</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> 
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">=</span><span class="n">AGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">B</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">tred</span><span class="p">(</span><span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
 </pre></div>
 </div>
 <p>See the graphviz &#8220;tred&#8221; program for details of the algorithm.</p>
@@ -956,7 +949,7 @@ edges u-&gt;v and v-&gt;u.</p>
 <dd><p>Write graph in dot format to file on path.</p>
 <p>path can be a file name or file handle</p>
 <p>use:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">G</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;file.dot&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;file.dot&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -972,11 +965,11 @@ edges u-&gt;v and v-&gt;u.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2013, PyGraphviz Developers.
+      &copy;2016, PyGraphviz Developers.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>
 
