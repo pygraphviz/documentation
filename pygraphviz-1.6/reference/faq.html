@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ &#8212; PyGraphviz 1.6 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within PyGraphviz 1.6 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="API Notes" href="api_notes.html" />
+    <link rel="prev" title="AGraph Class" href="agraph.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><dl class="field-list">
+<dt class="field-odd">Q</dt>
+<dd class="field-odd"><p>I followed the installation instructions but when I do</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pygraphviz</span>
+</pre></div>
+</div>
+<p>I get an error like
+ImportError: libagraph.so.1: cannot open shared object file: No
+such file or directory</p>
+<p>What is wrong?</p>
+</dd>
+<dt class="field-even">A</dt>
+<dd class="field-even"><p>Some Unix systems don’t include the Graphviz library in the
+default search path for the run-time linker.  The path is often
+something like /usr/lib/graphviz or /sw/lib/graphviz etc. and
+it needs to be added to your search path.  You can</p>
+<ol class="arabic simple">
+<li><p>set the LD_LIBRARY_PATH environment variable
+e.g. export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/lib/graphviz</p></li>
+<li><p>configure your system with the additional path.
+e.g. for Linux add a line to /etc/ld.so.conf and
+run ldconfig</p></li>
+</ol>
+</dd>
+<dt class="field-odd">Q</dt>
+<dd class="field-odd"><p>How do I compile pygraphviz under Windows?  And why
+don’t you distribute a pygraphviz Windows installer?</p>
+</dd>
+<dt class="field-even">A</dt>
+<dd class="field-even"><p>We don’t have Windows development machines but would like to
+have pygraphviz work on all platforms.  If you have success
+with Windows or would be willing to help test and distribute a
+Windows installer please drop us a note.</p>
+<p>See also issues at: <a class="reference external" href="https://github.com/pygraphviz/pygraphviz/search?q=Windows&amp;type=Issues">https://github.com/pygraphviz/pygraphviz/search?q=Windows&amp;type=Issues</a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">PyGraphviz</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="agraph.html">AGraph Class</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_notes.html">API Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related.html">Related Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html">History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="legal.html">Legal</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Reference</a><ul>
+      <li>Previous: <a href="agraph.html" title="previous chapter">AGraph Class</a></li>
+      <li>Next: <a href="api_notes.html" title="next chapter">API Notes</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2004-2020, PyGraphviz Developers.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
