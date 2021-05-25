@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Install &mdash; PyGraphviz 1.8rc1.dev0 documentation</title>
@@ -190,7 +191,7 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="install">
+  <section id="install">
 <h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
 <p>PyGraphviz requires:</p>
 <ul class="simple">
@@ -206,42 +207,42 @@
 <p class="admonition-title">Warning</p>
 <p>We recommend avoiding Anaconda and conda-forge to install Graphviz and PyGraphviz.</p>
 </div>
-<div class="section" id="recommended">
+<section id="recommended">
 <h2>Recommended<a class="headerlink" href="#recommended" title="Permalink to this headline">¶</a></h2>
 <p>We recommend installing Python packages using <a class="reference external" href="https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/">pip and virtual environments</a>.</p>
-<div class="section" id="linux">
+<section id="linux">
 <h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
 <p>We recommend installing Graphviz using your Linux system’s package manager.
 Below are examples for some popular distributions.</p>
-<div class="section" id="ubuntu-and-debian">
+<section id="ubuntu-and-debian">
 <h4>Ubuntu and Debian<a class="headerlink" href="#ubuntu-and-debian" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo apt-get install graphviz graphviz-dev
 <span class="gp">$ </span>pip install pygraphviz
 </pre></div>
 </div>
-</div>
-<div class="section" id="fedora-and-red-hat">
+</section>
+<section id="fedora-and-red-hat">
 <h4>Fedora and Red Hat<a class="headerlink" href="#fedora-and-red-hat" title="Permalink to this headline">¶</a></h4>
 <p>You may need to replace <code class="docutils literal notranslate"><span class="pre">dnf</span></code> with <code class="docutils literal notranslate"><span class="pre">yum</span></code> in the example below.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo dnf install graphviz graphviz-devel
 <span class="gp">$ </span>pip install pygraphviz
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="macos">
+</section>
+</section>
+<section id="macos">
 <h3>macOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h3>
 <p>We recommend installing Graphviz using the Homebrew package manager for macOS.</p>
-<div class="section" id="homebrew">
+<section id="homebrew">
 <h4>Homebrew<a class="headerlink" href="#homebrew" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>brew install graphviz
 <span class="gp">$ </span>pip install pygraphviz
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="advanced">
+</section>
+</section>
+</section>
+<section id="advanced">
 <h2>Advanced<a class="headerlink" href="#advanced" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
 <dt>The two main difficulties are</dt><dd><ol class="arabic simple">
@@ -250,7 +251,7 @@ Below are examples for some popular distributions.</p>
 </ol>
 </dd>
 </dl>
-<div class="section" id="providing-path-to-graphviz">
+<section id="providing-path-to-graphviz">
 <h3>Providing path to Graphviz<a class="headerlink" href="#providing-path-to-graphviz" title="Permalink to this headline">¶</a></h3>
 <p>If you’ve installed Graphviz and <code class="docutils literal notranslate"><span class="pre">pip</span></code> is unable to find Graphviz, then you need to
 provide <code class="docutils literal notranslate"><span class="pre">pip</span></code> with the path(s) where it can find Graphviz.
@@ -259,7 +260,7 @@ library files for Graphviz are located on your file system.</p>
 <p>Once you know where you’ve installed Graphviz, you will need to do something like
 the following.  There is an additional example using Chocolatey on Windows further
 down the page.</p>
-<div class="section" id="macports">
+<section id="macports">
 <h4>MacPorts<a class="headerlink" href="#macports" title="Permalink to this headline">¶</a></h4>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -277,9 +278,9 @@ There is an open ticket to upgrade MacPorts to version 2.46.0 here:
 <span class="go">              pygraphviz</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="windows">
+</section>
+</section>
+<section id="windows">
 <span id="windows-install"></span><h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
 <p>Historically, installing Graphviz and PyGraphviz on Windows has been challenging.
 Fortunately, the Graphviz developers are working to fix this and
@@ -291,7 +292,7 @@ using <a class="reference external" href="https://chocolatey.org/">Chocolatey</a
 <a class="reference external" href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">https://visualstudio.microsoft.com/visual-cpp-build-tools/</a></p>
 <p>Assuming you have Python and Visual C/C++ installed,
 we believe the following should work on Windows 10 (64 bit) using PowerShell.</p>
-<div class="section" id="manual-download">
+<section id="manual-download">
 <h4>Manual download<a class="headerlink" href="#manual-download" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple">
 <li><p>Download and install 2.46.0 for Windows 10 (64-bit):
@@ -304,8 +305,8 @@ we believe the following should work on Windows 10 (64 bit) using PowerShell.</p
 <span class="go">              pygraphviz</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id1">
+</section>
+<section id="id1">
 <h4>Chocolatey<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">PS C:\&gt; choco install graphviz</span>
 <span class="go">PS C:\&gt; python -m pip install --global-option=build_ext `</span>
@@ -314,10 +315,10 @@ we believe the following should work on Windows 10 (64 bit) using PowerShell.</p
 <span class="go">              pygraphviz</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="faq">
+</section>
+</section>
+</section>
+<section id="faq">
 <h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><dl class="field-list">
@@ -376,8 +377,8 @@ for further discussion on wheels and packaging.</p>
 </dd>
 </dl>
 </div></blockquote>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -396,7 +397,7 @@ for further discussion on wheels and packaging.</p>
     <p>
         &#169; Copyright 2004-2021, PyGraphviz Developers.
       <span class="lastupdated">
-        Last updated on Feb 20, 2021.
+        Last updated on May 25, 2021.
       </span>
 
     </p>
