@@ -545,27 +545,17 @@ document.write(`
 <span class="n">export</span> <span class="n">REPO</span><span class="o">=</span><span class="s2">&quot;pygraphviz&quot;</span>
 </pre></div>
 </div>
-<p>If this is a prerelease:</p>
-<blockquote>
-<div><p>export NOTES=”doc/source/release/release_dev.rst”</p>
-</div></blockquote>
-<p>If this is release:</p>
-<blockquote>
-<div><p>export NOTES=”doc/source/release/release_${VERSION}.rst”
-git rm doc/source/release/release_dev.rst</p>
-</div></blockquote>
 </li>
 <li><p>Autogenerate release notes:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>changelist ${ORG}/${REPO}  pygraphviz-${PREVIOUS} main --version ${VERSION}  --out ${NOTES} --format rst
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>changelist ${ORG}/${REPO} v${PREVIOUS} main --version ${VERSION}
 </pre></div>
 </div>
 </li>
-<li><p>Edit <code class="docutils literal notranslate"><span class="pre">doc/source/_static/version_switcher.json</span></code> in order to add the release, move the
-key value pair <cite>“preferred”: true</cite> to the most recent stable version, and commit.</p></li>
+<li><p>Put the output of the above command at the top of <code class="docutils literal notranslate"><span class="pre">CHANGELOG.md</span></code></p></li>
 <li><p>Update <code class="docutils literal notranslate"><span class="pre">version</span></code> in <code class="docutils literal notranslate"><span class="pre">pygraphviz/__init__.py</span></code>.</p></li>
 <li><p>Commit changes:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git add pygraphviz/__init__.py ${NOTES} doc/source/_static/version_switcher.json
-git commit -m &quot;Designate ${VERSION} release&quot;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">pygraphviz</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="n">CHANGELOG</span><span class="o">.</span><span class="n">md</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Designate $</span><span class="si">{VERSION}</span><span class="s2"> release&quot;</span>
 </pre></div>
 </div>
 </li>
@@ -595,15 +585,16 @@ The documentation is kept in a separate repo: pygraphviz/documentation</p>
 <li><p>Sync your branch with the remote repo: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>.</p></li>
 <li><p>Copy the documentation built by the CI service.
 Assuming you are at the top-level of the <code class="docutils literal notranslate"><span class="pre">documentation</span></code> repo:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># FIXME - use eol_banner.html
-cp -a latest ../pygraphviz-${VERSION}
-git reset --hard &lt;commit from last release&gt;
-mv ../pygraphviz-${VERSION} .
-rm -rf stable
-cp -rf pygraphviz-${VERSION} stable
-git add pygraphviz-${VERSION} stable
-git commit -m &quot;Add ${VERSION} docs&quot;
-git push  # force push---be careful!
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># FIXME - use eol_banner.html</span>
+
+<span class="c1"># maybe squash the last XX  Deploy GitHub Pages commits</span>
+<span class="c1"># git reset --soft HEAD~XX &amp;&amp; git commit</span>
+<span class="c1"># check you didn&#39;t break anything</span>
+<span class="c1"># diff -r latest pygraphviz-&lt;version&gt;</span>
+<span class="c1"># you will then need to force the push so be careful!</span>
+<span class="n">cp</span> <span class="o">-</span><span class="n">a</span> <span class="n">latest</span> <span class="n">pygraphviz</span><span class="o">-&lt;</span><span class="n">version</span><span class="o">&gt;</span>
+<span class="n">cp</span> <span class="o">-</span><span class="n">a</span> <span class="n">latest</span> <span class="n">stable</span>
+<span class="n">git</span> <span class="n">add</span> <span class="n">pygraphviz</span><span class="o">-&lt;</span><span class="n">version</span><span class="o">&gt;</span> <span class="n">stable</span>
 </pre></div>
 </div>
 </li>
