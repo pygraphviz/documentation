@@ -1,0 +1,921 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>News &#8212; PyGraphviz 1.12 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script src="../_static/documentation_options.js?v=2c863c54"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'release/old_release_log';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://pygraphviz.github.io/documentation/latest/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.12';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        </script>
+    <link rel="canonical" href="https://pygraphviz.github.io/documentation/stable/release/old_release_log.html" />
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within PyGraphviz 1.12 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="pygraphviz 1.12" href="release_1.12.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Jan 08, 2024"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">PyGraphviz</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../install.html">
+                        Install
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tutorial.html">
+                        Tutorial
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../auto_examples/index.html">
+                        Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../reference/index.html">
+                        Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../developer/index.html">
+                        Developer
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+                    <li class="nav-item current active">
+                      <a class="nav-link dropdown-item nav-internal" href="index.html">
+                        Releases
+                      </a>
+                    </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pygraphviz.github.io/" title="Home Page" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-home fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Home Page</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pygraphviz/pygraphviz" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../install.html">
+                        Install
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tutorial.html">
+                        Tutorial
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../auto_examples/index.html">
+                        Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../reference/index.html">
+                        Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../developer/index.html">
+                        Developer
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
+                    More
+                </button>
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
+                    
+                    <li class="nav-item current active">
+                      <a class="nav-link dropdown-item nav-internal" href="index.html">
+                        Releases
+                      </a>
+                    </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pygraphviz.github.io/" title="Home Page" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-home fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Home Page</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pygraphviz/pygraphviz" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="release_1.12.html">pygraphviz 1.12</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">News</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Releases</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">News</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="news">
+<h1>News<a class="headerlink" href="#news" title="Link to this heading">#</a></h1>
+<section id="pygraphviz-1-12">
+<h2>pygraphviz-1.12<a class="headerlink" href="#pygraphviz-1-12" title="Link to this heading">#</a></h2>
+<p>Release date: TBD</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Drop Python 3.8 (SPEC 0)</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="pygraphviz-1-11">
+<h2>pygraphviz-1.11<a class="headerlink" href="#pygraphviz-1-11" title="Link to this heading">#</a></h2>
+<p>Release date: 1 June 2023</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Update to SWIG 4.1.1</p></li>
+<li><p>Require Graphviz 2.46+</p></li>
+<li><p>Fix passthrough of graph attributes when copying</p></li>
+<li><p>Update install instructions</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="pygraphviz-1-10">
+<h2>pygraphviz-1.10<a class="headerlink" href="#pygraphviz-1-10" title="Link to this heading">#</a></h2>
+<p>Release date: 19 August 2022</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Add Python 3.11 support</p></li>
+<li><p>Fix gvRenderData bytes output</p></li>
+<li><p>Fix FILE* resource leak in agread() wrapper</p></li>
+<li><p>Close all references to fname before calling unlink(fname)</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="pygraphviz-1-9">
+<h2>pygraphviz-1.9<a class="headerlink" href="#pygraphviz-1-9" title="Link to this heading">#</a></h2>
+<p>Release date: 9 February 2022</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Drop Python 3.7 support</p></li>
+<li><p>Add Python 3.10 support</p></li>
+<li><p>Add osage and patchwork to progs list</p></li>
+<li><p>Add IPython rich display hook to AGraph class</p></li>
+<li><p>Add contributor guide</p></li>
+<li><p>Fixed directed nature of AGraph.copy()</p></li>
+<li><p>Minor documentation and code fixes</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="pygraphviz-1-8">
+<h2>pygraphviz-1.8<a class="headerlink" href="#pygraphviz-1-8" title="Link to this heading">#</a></h2>
+<p>Release date: 20 January 2022</p>
+<p>This release was pulled because the install was broken with pip 22 and python 3.7.</p>
+</section>
+<section id="pygraphviz-1-7">
+<h2>pygraphviz-1.7<a class="headerlink" href="#pygraphviz-1-7" title="Link to this heading">#</a></h2>
+<p>Release date: 1 February 2021</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Drop Python 3.6 support</p></li>
+<li><p>Add Python 3.9 support</p></li>
+<li><p>Require Graphviz 2.42+, (Graphviz 2.46+ recommended)</p></li>
+<li><p>Improve installation process and documentation</p></li>
+<li><p>Switch from nose to pytest</p></li>
+<li><p>Remove old Python 2 code</p></li>
+<li><p>AGraph.eq includes attribute comparison (PR #246)</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="pygraphviz-1-6">
+<h2>pygraphviz-1.6<a class="headerlink" href="#pygraphviz-1-6" title="Link to this heading">#</a></h2>
+<p>Release date: 05 September 2020</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Add Python 3.8 support</p></li>
+<li><p>Drop Python 2.7 support</p></li>
+<li><p>Update to SWIG 4.0.1</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="pygraphviz-1-5">
+<h2>pygraphviz-1.5<a class="headerlink" href="#pygraphviz-1-5" title="Link to this heading">#</a></h2>
+<p>Release date: 10 September 2018</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Python 3.7 support</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="pygraphviz-1-3-1">
+<h2>pygraphviz-1.3.1<a class="headerlink" href="#pygraphviz-1-3-1" title="Link to this heading">#</a></h2>
+<p>Release date: 6 September 2015</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Update manifest to include missing files</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="pygraphviz-1-3">
+<h2>pygraphviz-1.3<a class="headerlink" href="#pygraphviz-1-3" title="Link to this heading">#</a></h2>
+<p>Release date: 5 September 2015</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Python 3 support</p></li>
+<li><p>Encoding bugfixes</p></li>
+</ul>
+</div></blockquote>
+<p><a class="github reference external" href="https://github.com/pygraphviz/pygraphviz/issues?q=milestone%3Apygraphivz-1.3+is%3Aclosed">pygraphviz/pygraphviz#issues</a></p>
+</section>
+<section id="pygraphviz-1-2">
+<h2>pygraphviz-1.2<a class="headerlink" href="#pygraphviz-1-2" title="Link to this heading">#</a></h2>
+<p>Release date: 3 August 2013</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Quote Graphviz program names to work with space (Windows fix)</p></li>
+<li><p>Keep name in reverse()</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="pygraphviz-1-1">
+<h2>pygraphviz-1.1<a class="headerlink" href="#pygraphviz-1-1" title="Link to this heading">#</a></h2>
+<p>Release date: 9 February 2011</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Added unicode support for handling non-ASCII characters</p></li>
+<li><p>Better handling of user data on initialization of AGraph() object
+to guess input type (AGraph object, file, dict-of-dicts, file)</p></li>
+<li><p>Add sfdp to layout options</p></li>
+</ul>
+<p>Pygraphviz-1.1 adds unicode (graphviz charset) support.
+The default Node type is now unicode.
+See examples/utf8.py for an example of how to use non-ASCII characters.</p>
+<p>The __str__ and  __repr__ methods have been rewritten and a __unicode__
+method added.</p>
+<p>If G is a pygraphviz.AGraph object then</p>
+<ul class="simple">
+<li><p>str(G) produces a dot-format string representation
+(some characters might not be represented correctly)</p></li>
+<li><p>unicode(G) produces a dot-format unicode representation</p></li>
+<li><p>repr(G) produces a string of the unicode representation.</p></li>
+<li><p>print G produces a formatted dot language output</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="pygraphviz-1-0-0">
+<h2>pygraphviz-1.0.0<a class="headerlink" href="#pygraphviz-1-0-0" title="Link to this heading">#</a></h2>
+<p>Release date: 30 July 2010</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Added to_string() and from_string methods</p></li>
+<li><p>Interface to graphviz “acyclic” and “tred”</p></li>
+<li><p>Better handling of user data on initialization of AGraph() object
+to guess input type (AGraph object, file, dict-of-dicts, file)</p></li>
+<li><p>Add handling of default attributes for subgraphs</p></li>
+<li><p>Improved error handling when using non-string data</p></li>
+<li><p>Fix bug in default attribute handling</p></li>
+<li><p>Make sure file handles are closed correctly</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="pygraphviz-0-99-1">
+<h2>pygraphviz-0.99.1<a class="headerlink" href="#pygraphviz-0-99-1" title="Link to this heading">#</a></h2>
+<p>Release date: 7 December 2008</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Use Graphviz libcgraph instead of deprecated libagraph</p></li>
+<li><p>More closely match API to NetworkX</p></li>
+<li><p>edges() now produces two-tuples or three tuples if edges(keys=True)</p></li>
+<li><p>Edge and Node objects now have .name and .handle properties</p></li>
+<li><p>Warn without throwing exceptions for Graphviz errors</p></li>
+<li><p>Graph now has .strict and .directed properties</p></li>
+<li><p>Cleared up fontsize warnings in examples</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="pygraphviz-0-99">
+<h2>pygraphviz-0.99<a class="headerlink" href="#pygraphviz-0-99" title="Link to this heading">#</a></h2>
+<p>Release date: 18 November 2008</p>
+</section>
+<section id="pygraphviz-0-37">
+<h2>pygraphviz-0.37<a class="headerlink" href="#pygraphviz-0-37" title="Link to this heading">#</a></h2>
+<p>Release date: 17 August 2008</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Handle default attributes for subgraphs</p></li>
+<li><p>Buggy attribute assignment fixed by Graphviz team (use Graphviz&gt;2.17.20080127)</p></li>
+<li><p>Encode all stings as UTF-8 as default</p></li>
+<li><p>Fix AGraph.clear() memory leak and attempt to address slow deletion
+of nodes and edges</p></li>
+<li><p>Allow pdf output and support all available output types on a given platform</p></li>
+<li><p>Fix number_of_edges() to use gv.agnedges to correctly report edges for
+graphs with self loops</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="pygraphviz-0-36">
+<h2>pygraphviz-0.36<a class="headerlink" href="#pygraphviz-0-36" title="Link to this heading">#</a></h2>
+<p>Release date: 13 January 2008</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Automatic handling of types on init of AGraph(data): data can be
+a filename, string in dot format, dictionary-of-dictionaries,
+or a SWIG AGraph pointer.</p></li>
+<li><p>Add interface to Graphviz programs acyclic and tred</p></li>
+<li><p>Refactor process handling to allow easier access to Graphviz layout
+and graph processing programs</p></li>
+<li><p>to_string() and from_string() methods</p></li>
+<li><p>Handle multiple anonymous edges correctly</p></li>
+<li><p>Attribute handling on add_node, add_edge and init of AGraph.
+So you can e.g. A=AGraph(ranksep=’0.1’); A.add_node(‘a’,color=’red’)
+A.add_edge(‘a’,’b’,color=’blue’)</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="pygraphviz-0-35">
+<h2>pygraphviz-0.35<a class="headerlink" href="#pygraphviz-0-35" title="Link to this heading">#</a></h2>
+<p>Release date: 22 July 2007</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Rebuilt SWIG wrappers - works correctly now on 64 bit machines/python2.5</p></li>
+<li><p>Implement Graphviz subgraph functionality</p></li>
+<li><p>Better error reporting when attempting to set attributes, avoid
+segfault when using None</p></li>
+<li><p>pkg-config handling now works in more configurations (hopefully all)</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="pygraphviz-0-34">
+<h2>pygraphviz-0.34<a class="headerlink" href="#pygraphviz-0-34" title="Link to this heading">#</a></h2>
+<p>Release date: 11 April 2007</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>run “python setup_egg.py test” for tests if you have setuptools</p></li>
+<li><p>added tests for layout code</p></li>
+<li><p>use pkg-config for finding graphviz (dotneato-config still works
+for older graphviz versions)</p></li>
+<li><p>use threads and temporary files for multiplatform nonblocking IO</p></li>
+<li><p>django example</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="pygraphviz-0-33">
+<h2>pygraphviz-0.33<a class="headerlink" href="#pygraphviz-0-33" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Workaround for “nop” bug in graphviz-2.8, improved packaging,
+updated swig wrapper, better error handling.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="pygraphviz-0-32">
+<h2>pygraphviz-0.32<a class="headerlink" href="#pygraphviz-0-32" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>The release pygraphviz-0.32 is the second rewrite of the original project.
+It has improved attribute handling and drawing capabilities.
+It is not backward compatible with earlier versions.</p>
+<p>This version now inter-operates with many of the NetworkX
+algorithms and graph generators.</p>
+<p>pygraphviz-0.32 is a rewrite of pygraphviz-0.2x  with some significant
+changes in the API and Graphviz wrapper.  It is not compatible with
+with earlier versions.</p>
+<p>The goal of pygraphviz is to provide a (mostly) Pythonic interface
+to the Graphviz Agraph data-structure, layout, and drawing algorithms.</p>
+<p>The API is now similar to the NetworkX API.  Studying the
+documentation and Tutorial for NetworkX will teach you most of what
+you need to know for pygraphviz.  For a short introduction on pygraphviz
+see the pygraphviz Tutorial.</p>
+<p>There are some important differences between the PyGraphviz
+and NetworkX API.  With PyGraphviz</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>All nodes must be of string or unicode type.
+An attempt will be made to convert other types to a string.</p></li>
+<li><p>Nodes and edges are custom Python objects.  Nodes are like
+unicode/string objects and edges are like tuple objects.  (In NetworkX
+nodes can be anything and edges are two- or three-tuples.)</p></li>
+<li><p>Graphs, edges, and nodes may have attributes such as color,
+size, shape, attached to them.  If the attributes are known
+Graphviz attributes they will be used for drawing and layout.</p></li>
+<li><p>The layout() and draw() methods allow positioning of nodes
+and rendering in all of the supported Graphviz output formats.</p></li>
+<li><p>The string() method produces a string with the graph represented
+in Graphviz dot format.  See also from_string().</p></li>
+<li><p>The subgraph() method is the Graphviz representation of
+subgraphs: a tree of graphs under the original
+(root) graph. The are primarily used for clustering of nodes when
+drawing with dot.</p></li>
+</ul>
+</div></blockquote>
+<p>Pygraphviz supports most of the Graphviz API.</p>
+</div></blockquote>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-1-12">pygraphviz-1.12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-1-11">pygraphviz-1.11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-1-10">pygraphviz-1.10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-1-9">pygraphviz-1.9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-1-8">pygraphviz-1.8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-1-7">pygraphviz-1.7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-1-6">pygraphviz-1.6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-1-5">pygraphviz-1.5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-1-3-1">pygraphviz-1.3.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-1-3">pygraphviz-1.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-1-2">pygraphviz-1.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-1-1">pygraphviz-1.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-1-0-0">pygraphviz-1.0.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-0-99-1">pygraphviz-0.99.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-0-99">pygraphviz-0.99</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-0-37">pygraphviz-0.37</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-0-36">pygraphviz-0.36</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-0-35">pygraphviz-0.35</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-0-34">pygraphviz-0.34</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-0-33">pygraphviz-0.33</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygraphviz-0-32">pygraphviz-0.32</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2004-2024, PyGraphviz Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
