@@ -2264,8 +2264,7 @@
 
         <span class="k">if</span> <span class="n">prog</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_layout</span><span class="p">:</span>
-                <span class="n">prog</span> <span class="o">=</span> <span class="s2">&quot;neato&quot;</span>
-                <span class="n">args</span> <span class="o">+=</span> <span class="s2">&quot; -n2&quot;</span>
+                <span class="n">prog</span> <span class="o">=</span> <span class="s2">&quot;nop2&quot;</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Graph has no layout information, see layout() or specify prog=</span><span class="si">{}</span><span class="s2">.&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                     <span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;neato&quot;</span><span class="p">,</span> <span class="s2">&quot;dot&quot;</span><span class="p">,</span> <span class="s2">&quot;twopi&quot;</span><span class="p">,</span> <span class="s2">&quot;circo&quot;</span><span class="p">,</span> <span class="s2">&quot;fdp&quot;</span><span class="p">,</span> <span class="s2">&quot;nop&quot;</span><span class="p">])</span>

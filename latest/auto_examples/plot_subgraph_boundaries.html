@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Knuth Miles &#8212; PyGraphviz 2.1.dev0 documentation</title>
+    <title>Subgraph with Boundaries &#8212; PyGraphviz 2.1.dev0 documentation</title>
   
   
   
@@ -47,7 +47,7 @@
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/sg-tags.js?v=d80f6fa4"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/plot_miles';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/plot_subgraph_boundaries';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://pygraphviz.github.io/documentation/latest/_static/version_switcher.json';
@@ -56,14 +56,14 @@
             true;
         </script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
-    <link rel="canonical" href="https://pygraphviz.github.io/documentation/stable/auto_examples/plot_miles.html" />
+    <link rel="canonical" href="https://pygraphviz.github.io/documentation/stable/auto_examples/plot_subgraph_boundaries.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within PyGraphviz 2.1.dev0 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Reference" href="../reference/index.html" />
-    <link rel="prev" title="Star" href="plot_star.html" />
+    <link rel="next" title="Attributes" href="plot_attributes.html" />
+    <link rel="prev" title="Subgraph" href="plot_subgraph.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="2.1.dev0" />
@@ -286,10 +286,6 @@
   
 
   
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
-      <span class="fa-solid fa-outdent"></span>
-    </button>
-  
 </div>
 
     </header>
@@ -447,11 +443,11 @@
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="plot_subgraph.html">Subgraph</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plot_subgraph_boundaries.html">Subgraph with Boundaries</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Subgraph with Boundaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plot_attributes.html">Attributes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plot_simple.html">Basic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plot_star.html">Star</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Knuth Miles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot_miles.html">Knuth Miles</a></li>
 </ul>
 </div>
 </nav></div>
@@ -495,7 +491,7 @@
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Gallery</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Knuth Miles</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Subgraph with Boundaries</span></li>
   </ul>
 </nav>
 </div>
@@ -514,130 +510,55 @@
                   
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
-<p><a class="reference internal" href="#sphx-glr-download-auto-examples-plot-miles-py"><span class="std std-ref">Go to the end</span></a>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-plot-subgraph-boundaries-py"><span class="std std-ref">Go to the end</span></a>
 to download the full example code.</p>
 </div>
-<section class="sphx-glr-example-title" id="knuth-miles">
-<span id="sphx-glr-auto-examples-plot-miles-py"></span><h1>Knuth Miles<a class="headerlink" href="#knuth-miles" title="Link to this heading">#</a></h1>
-<p>An example that shows how to add your own positions to nodes
-and have graphviz “neato” position the edges.</p>
-<p>miles_graph() returns an undirected graph over the 128 US cities from
-the datafile miles_dat.txt.</p>
-<p>This example is described in Section 1.1 in Knuth’s book <a class="footnote-reference brackets" href="#id4" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
-<p>The data used in this example is copied from <a class="footnote-reference brackets" href="#id5" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.  The filename and
-header have been modified to adhere to the request of the author to
-not corrupt the original source file content and name.</p>
-<section id="references">
-<h2>References.<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id4" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>Donald E. Knuth,
-“The Stanford GraphBase: A Platform for Combinatorial Computing”,
-ACM Press, New York, 1993.</p>
-</aside>
-<aside class="footnote brackets" id="id5" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id2">1</a>,<a role="doc-backlink" href="#id3">2</a>)</span>
-<p><a class="reference external" href="http://www-cs-faculty.stanford.edu/~knuth/sgb.html">http://www-cs-faculty.stanford.edu/~knuth/sgb.html</a></p>
-</aside>
-</aside>
-<img src="../_images/sphx_glr_plot_miles_001.png" srcset="../_images/sphx_glr_plot_miles_001.png" alt="plot miles" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Loaded miles_dat.txt containing 128 cities.
-Wrote miles.dot
-Wrote miles.png
+<section class="sphx-glr-example-title" id="subgraph-with-boundaries">
+<span id="sphx-glr-auto-examples-plot-subgraph-boundaries-py"></span><h1>Subgraph with Boundaries<a class="headerlink" href="#subgraph-with-boundaries" title="Link to this heading">#</a></h1>
+<p>Draw a subgraph with bounding boxes demarcating both the nodes and the subgraphs</p>
+<img src="../_images/sphx_glr_plot_subgraph_boundaries_001.png" srcset="../_images/sphx_glr_plot_subgraph_boundaries_001.png" alt="plot subgraph boundaries" class = "sphx-glr-single-img"/><div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pygraphviz</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pgv</span>
+
+<span class="c1"># A graph in `.dot` format specifying two nodes, each within their own subgraph,</span>
+<span class="c1"># and a bi-directional edge between them</span>
+<span class="n">dot_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">digraph G {</span>
+<span class="s2">    graph [compound=true];</span>
+
+<span class="s2">    node [shape=box];</span>
+
+<span class="s2">    subgraph cluster_A {</span>
+<span class="s2">        label=&quot;A&quot;;</span>
+<span class="s2">        a1 [pos=&quot;50,100!&quot;];</span>
+<span class="s2">    }</span>
+
+<span class="s2">    subgraph cluster_B {</span>
+<span class="s2">        label=&quot;B&quot;;</span>
+<span class="s2">        b1 [pos=&quot;200,100!&quot;];</span>
+<span class="s2">    }</span>
+
+<span class="s2">    a1 -&gt; b1 [lhead=cluster_B, ltail=cluster_A, dir=both];</span>
+
+<span class="s2">    graph [bb=&quot;0,0,300,200&quot;];</span>
+<span class="s2">}</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="n">dot_str</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="s2">&quot;dot&quot;</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">&quot;subgraph_bdries.png&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Aric Hagberg (aric.hagberg@gmail.com)&quot;&quot;&quot;</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">miles_graph</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a graph from the data in miles_dat.txt.</span>
-
-<span class="sd">    Edges are made between cities that are less then 300 miles apart.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">gzip</span>
-
-    <span class="n">G</span> <span class="o">=</span> <span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;miles_dat&quot;</span><span class="p">)</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">node_attr</span><span class="p">[</span><span class="s2">&quot;shape&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;circle&quot;</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">node_attr</span><span class="p">[</span><span class="s2">&quot;fixedsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;true&quot;</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">node_attr</span><span class="p">[</span><span class="s2">&quot;fontsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;8&quot;</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">node_attr</span><span class="p">[</span><span class="s2">&quot;style&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;filled&quot;</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">graph_attr</span><span class="p">[</span><span class="s2">&quot;outputorder&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;edgesfirst&quot;</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">graph_attr</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;miles_dat&quot;</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">graph_attr</span><span class="p">[</span><span class="s2">&quot;ratio&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">edge_attr</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;#1100FF&quot;</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">edge_attr</span><span class="p">[</span><span class="s2">&quot;style&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;setlinewidth(2)&quot;</span>
-
-    <span class="n">cities</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;miles_dat.txt.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">):</span>  <span class="c1"># skip comments</span>
-            <span class="k">continue</span>
-        <span class="n">numfind</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^\d+&quot;</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">numfind</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>  <span class="c1"># this line is distances</span>
-            <span class="n">dist</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-            <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dist</span><span class="p">:</span>
-                <span class="k">if</span> <span class="nb">float</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">:</span>  <span class="c1"># connect if closer then 300 miles</span>
-                    <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">cities</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-                <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>  <span class="c1"># this line is a city, position, population</span>
-            <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
-            <span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">coordpop</span><span class="p">)</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">)</span>
-            <span class="n">cities</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">city</span><span class="p">)</span>
-            <span class="p">(</span><span class="n">coord</span><span class="p">,</span> <span class="n">pop</span><span class="p">)</span> <span class="o">=</span> <span class="n">coordpop</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;]&quot;</span><span class="p">)</span>
-            <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">coord</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
-            <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
-            <span class="n">n</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
-            <span class="c1"># assign positions, scale to be something reasonable in points</span>
-            <span class="n">n</span><span class="o">.</span><span class="n">attr</span><span class="p">[</span><span class="s2">&quot;pos&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="o">-</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">7000</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">10.0</span><span class="si">:</span><span class="s2">f</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2000</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">10.0</span><span class="si">:</span><span class="s2">f</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="p">)</span>
-            <span class="c1"># assign node size, in sqrt of 1,000,000&#39;s of people</span>
-            <span class="n">d</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">pop</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1000000.0</span><span class="p">)</span>
-            <span class="n">n</span><span class="o">.</span><span class="n">attr</span><span class="p">[</span><span class="s2">&quot;height&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">d</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="n">n</span><span class="o">.</span><span class="n">attr</span><span class="p">[</span><span class="s2">&quot;width&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">d</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="c1"># assign node color</span>
-            <span class="n">n</span><span class="o">.</span><span class="n">attr</span><span class="p">[</span><span class="s2">&quot;fillcolor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;#0000</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">256</span><span class="p">)</span><span class="si">:</span><span class="s2">2x</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="c1"># empty labels</span>
-            <span class="n">n</span><span class="o">.</span><span class="n">attr</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span>
-
-    <span class="k">return</span> <span class="n">G</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">pygraphviz</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pgv</span>
-
-    <span class="c1"># ignore Graphviz warning messages</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="ne">RuntimeWarning</span><span class="p">)</span>
-
-    <span class="n">G</span> <span class="o">=</span> <span class="n">miles_graph</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loaded miles_dat.txt containing 128 cities.&quot;</span><span class="p">)</span>
-
-    <span class="n">G</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;miles.dot&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wrote miles.dot&quot;</span><span class="p">)</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">&quot;miles.png&quot;</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s2">&quot;nop2&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wrote miles.png&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-miles-py">
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-subgraph-boundaries-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
-<p><a class="reference download internal" download="" href="../_downloads/ff67e8e79bb0adcdc076fc61d5a9e5a0/plot_miles.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_miles.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../_downloads/280619755452a7d92d15488249c27804/plot_subgraph_boundaries.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_subgraph_boundaries.ipynb</span></code></a></p>
 </div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
-<p><a class="reference download internal" download="" href="../_downloads/3184e92a37f50733f4d8eda3ab5447d1/plot_miles.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_miles.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../_downloads/85ffc59a327a2c46cebea7c22a7e6027/plot_subgraph_boundaries.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_subgraph_boundaries.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download sphx-glr-download-zip docutils container">
-<p><a class="reference download internal" download="" href="../_downloads/790a3ae54cfc809594486e55ee514e90/plot_miles.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">plot_miles.zip</span></code></a></p>
+<p><a class="reference download internal" download="" href="../_downloads/8178b4648c9a8723a4bc013fb7f36ec7/plot_subgraph_boundaries.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">plot_subgraph_boundaries.zip</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
-</section>
 </section>
 
 
@@ -650,24 +571,6 @@ Wrote miles.png
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-<div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References.</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
