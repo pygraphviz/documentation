@@ -64,7 +64,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="2.0.1" />
-    <meta name="docbuild:last-update" content="Jul 20, 2026"/>
+    <meta name="docbuild:last-update" content="Aug 03, 2026"/>
   
     
     <script src="../../_static/searchtools.js"></script>
@@ -487,6 +487,7 @@
 <span class="sd">A Python interface to Graphviz.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">fileinput</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">shlex</span>
@@ -2355,16 +2356,7 @@
         <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.gz&quot;</span><span class="p">):</span>
-                <span class="c1"># import gzip</span>
-                <span class="c1"># fh = gzip.open(path,mode=mode)  # doesn&#39;t return real fh</span>
-                <span class="n">fh</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s2">&quot;gzcat &quot;</span> <span class="o">+</span> <span class="n">path</span><span class="p">)</span>  <span class="c1"># probably not portable</span>
-            <span class="k">elif</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.bz2&quot;</span><span class="p">):</span>
-                <span class="c1"># import bz2</span>
-                <span class="c1"># fh = bz2.BZ2File(path,mode=mode) # doesn&#39;t return real fh</span>
-                <span class="n">fh</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s2">&quot;bzcat &quot;</span> <span class="o">+</span> <span class="n">path</span><span class="p">)</span>  <span class="c1"># probably not portable</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+            <span class="n">fh</span> <span class="o">=</span> <span class="n">fileinput</span><span class="o">.</span><span class="n">hook_compressed</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;write&quot;</span><span class="p">):</span>
             <span class="c1"># Note, mode of file handle is unchanged.</span>
             <span class="n">fh</span> <span class="o">=</span> <span class="n">path</span>
