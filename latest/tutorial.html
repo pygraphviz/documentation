@@ -67,7 +67,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="2.0.1" />
-    <meta name="docbuild:last-update" content="Aug 03, 2026"/>
+    <meta name="docbuild:last-update" content="Aug 18, 2026"/>
   
     
     <script src="_static/searchtools.js"></script>
@@ -527,7 +527,7 @@ found with</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2.43.0&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'2.43.0'
 </pre></div>
 </div>
 </div>
@@ -544,7 +544,7 @@ found with</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph &quot;&quot; {
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph "" {
 }
 </pre></div>
 </div>
@@ -562,20 +562,20 @@ parallel edges and self-loops use</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>digraph &quot;&quot; {
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>digraph "" {
 }
 </pre></div>
 </div>
 </div>
 </div>
 <p>You may specify a dot format file to be read on initialization:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="s2">&quot;Petersen.dot&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="s2">"Petersen.dot"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Other options for initializing a graph are using a string,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="s2">&quot;graph {1 -- 2;}&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="s2">"graph {1 -- 2;}"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -591,14 +591,14 @@ parallel edges and self-loops use</p>
 <p>using a dict of dicts,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;2&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;1&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;2&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"1"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"2"</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="s2">"2"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"1"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="s2">"3"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"2"</span><span class="p">:</span> <span class="kc">None</span><span class="p">}}</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph &quot;&quot; {
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph "" {
 	1 -- 2;
 	2 -- 3;
 }
@@ -618,14 +618,14 @@ parallel edges and self-loops use</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>  <span class="c1"># adds node &#39;a&#39;</span>
-<span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span>  <span class="c1"># adds edge &#39;b&#39;-&#39;c&#39; (and also nodes &#39;b&#39;, &#39;c&#39;)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"a"</span><span class="p">)</span>  <span class="c1"># adds node 'a'</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">)</span>  <span class="c1"># adds edge 'b'-'c' (and also nodes 'b', 'c')</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph &quot;&quot; {
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph "" {
 	a;
 	b -- c;
 }
@@ -636,14 +636,14 @@ parallel edges and self-loops use</p>
 <p>or from lists or containers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodelist</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;h&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodelist</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"f"</span><span class="p">,</span> <span class="s2">"g"</span><span class="p">,</span> <span class="s2">"h"</span><span class="p">]</span>
 <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nodelist</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph &quot;&quot; {
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph "" {
 	a;
 	b -- c;
 	f;
@@ -658,13 +658,13 @@ parallel edges and self-loops use</p>
 to a string</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># adds node &#39;1&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># adds node '1'</span>
 <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;f&#39;, &#39;g&#39;, &#39;h&#39;, &#39;1&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['a', 'b', 'c', 'f', 'g', 'h', '1']
 </pre></div>
 </div>
 </div>
@@ -677,17 +677,17 @@ the graph_attr, node_attr, and edge_attr dictionaries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">()</span>
-<span class="n">G</span><span class="o">.</span><span class="n">graph_attr</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Name of graph&quot;</span>
-<span class="n">G</span><span class="o">.</span><span class="n">node_attr</span><span class="p">[</span><span class="s2">&quot;shape&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;circle&quot;</span>
-<span class="n">G</span><span class="o">.</span><span class="n">edge_attr</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
-<span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">graph_attr</span><span class="p">[</span><span class="s2">"label"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Name of graph"</span>
+<span class="n">G</span><span class="o">.</span><span class="n">node_attr</span><span class="p">[</span><span class="s2">"shape"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"circle"</span>
+<span class="n">G</span><span class="o">.</span><span class="n">edge_attr</span><span class="p">[</span><span class="s2">"color"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"red"</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph &quot;&quot; {
-	graph [label=&quot;Name of graph&quot;];
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph "" {
+	graph [label="Name of graph"];
 	node [shape=circle];
 	edge [color=red];
 	A -- B;
@@ -699,7 +699,7 @@ the graph_attr, node_attr, and edge_attr dictionaries</p>
 <p>Graph attributes can be set when initializing the graph</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="n">ranksep</span><span class="o">=</span><span class="s2">&quot;0.1&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="n">ranksep</span><span class="o">=</span><span class="s2">"0.1"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -707,14 +707,14 @@ the graph_attr, node_attr, and edge_attr dictionaries</p>
 <p>Attributes can be added when adding nodes or edges,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph &quot;&quot; {
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph "" {
 	graph [ranksep=0.1];
 	1	[color=red];
 	b -- c	[color=blue];
@@ -727,16 +727,16 @@ the graph_attr, node_attr, and edge_attr dictionaries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">n</span><span class="o">.</span><span class="n">attr</span><span class="p">[</span><span class="s2">&quot;shape&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;box&quot;</span>
+<span class="n">n</span><span class="o">.</span><span class="n">attr</span><span class="p">[</span><span class="s2">"shape"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"box"</span>
 
-<span class="n">e</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">get_edge</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span>
-<span class="n">e</span><span class="o">.</span><span class="n">attr</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">get_edge</span><span class="p">(</span><span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">attr</span><span class="p">[</span><span class="s2">"color"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"green"</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph &quot;&quot; {
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph "" {
 	graph [ranksep=0.1];
 	1	[color=red,
 		shape=box];
@@ -755,8 +755,8 @@ For example, the special character <code class="docutils literal notranslate"><s
 will be replaced with the graph name during drawing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
-<span class="n">A</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;my graph: \G&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"foo"</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">"my graph: \G"</span><span class="p">)</span>
 <span class="n">A</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
@@ -764,8 +764,8 @@ will be replaced with the graph name during drawing:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph foo {
-	node [label=&quot;\N&quot;];
-	1	[label=&quot;my graph: \G&quot;];
+	node [label="\N"];
+	1	[label="my graph: \G"];
 	1 -- 2;
 	2 -- 3;
 }
@@ -783,20 +783,20 @@ will be replaced with the graph name during drawing:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph foo {
-	graph [bb=&quot;0,0,170.52,161.48&quot;];
-	node [label=&quot;\N&quot;];
+	graph [bb="0,0,170.52,161.48"];
+	node [label="\N"];
 	1	[height=0.5,
-		label=&quot;my graph: \G&quot;,
-		pos=&quot;75.393,143.48&quot;,
+		label="my graph: \G",
+		pos="75.393,143.48",
 		width=2.0943];
 	2	[height=0.5,
-		pos=&quot;119.41,86.155&quot;,
+		pos="119.41,86.155",
 		width=0.75];
-	1 -- 2	[pos=&quot;89.08,125.65 94.835,118.16 101.48,109.51 107.08,102.22&quot;];
+	1 -- 2	[pos="89.08,125.65 94.835,118.16 101.48,109.51 107.08,102.22"];
 	3	[height=0.5,
-		pos=&quot;143.52,18&quot;,
+		pos="143.52,18",
 		width=0.75];
-	2 -- 3	[pos=&quot;125.62,68.603 129.19,58.506 133.67,45.855 137.25,35.729&quot;];
+	2 -- 3	[pos="125.62,68.603 129.19,58.506 133.67,45.855 137.25,35.729"];
 }
 </pre></div>
 </div>
@@ -805,7 +805,7 @@ will be replaced with the graph name during drawing:</p>
 <p>Character substitution occurs during figure drawing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">&quot;foo.png&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">"foo.png"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -830,7 +830,7 @@ See the <a class="reference external" href="https://www.graphviz.org/pdf/dot.1.p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph &quot;&quot; {
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph "" {
 	graph [ranksep=0.1];
 	1	[color=red,
 		shape=box];
@@ -844,9 +844,9 @@ See the <a class="reference external" href="https://www.graphviz.org/pdf/dot.1.p
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test round-tripping graph data to/from file</span>
-<span class="n">G</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;file.dot&quot;</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"file.dot"</span><span class="p">)</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file.dot&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"file.dot"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
     <span class="n">H</span> <span class="o">=</span> <span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="n">fh</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 
 <span class="n">H</span><span class="o">.</span><span class="n">string</span><span class="p">()</span> <span class="o">==</span> <span class="n">s</span>
@@ -868,24 +868,24 @@ See the <a class="reference external" href="https://www.graphviz.org/pdf/dot.1.p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph &quot;&quot; {
-	graph [bb=&quot;0,0,150,92&quot;,
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph "" {
+	graph [bb="0,0,150,92",
 		ranksep=0.1
 	];
-	node [label=&quot;\N&quot;];
+	node [label="\N"];
 	1	[color=red,
 		height=0.5,
-		pos=&quot;123,74&quot;,
+		pos="123,74",
 		shape=box,
 		width=0.75];
 	b	[height=0.5,
-		pos=&quot;27,28.639&quot;,
+		pos="27,28.639",
 		width=0.75];
 	c	[height=0.5,
-		pos=&quot;98.21,18&quot;,
+		pos="98.21,18",
 		width=0.75];
 	b -- c	[color=green,
-		pos=&quot;53.516,24.677 59.368,23.803 65.572,22.876 71.434,22&quot;];
+		pos="53.516,24.677 59.368,23.803 65.572,22.876 71.434,22"];
 }
 </pre></div>
 </div>
@@ -893,30 +893,30 @@ See the <a class="reference external" href="https://www.graphviz.org/pdf/dot.1.p
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s2">&quot;dot&quot;</span><span class="p">)</span>  <span class="c1"># use dot</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s2">"dot"</span><span class="p">)</span>  <span class="c1"># use dot</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph &quot;&quot; {
-	graph [bb=&quot;0,0,126,80&quot;,
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>strict graph "" {
+	graph [bb="0,0,126,80",
 		ranksep=0.1
 	];
-	node [label=&quot;\N&quot;];
+	node [label="\N"];
 	1	[color=red,
 		height=0.5,
-		pos=&quot;27,62&quot;,
+		pos="27,62",
 		shape=box,
 		width=0.75];
 	b	[height=0.5,
-		pos=&quot;99,62&quot;,
+		pos="99,62",
 		width=0.75];
 	c	[height=0.5,
-		pos=&quot;99,18&quot;,
+		pos="99,18",
 		width=0.75];
 	b -- c	[color=green,
-		pos=&quot;99,43.917 99,41.373 99,38.75 99,36.204&quot;];
+		pos="99,43.917 99,41.373 99,38.75 99,36.204"];
 }
 </pre></div>
 </div>
@@ -925,7 +925,7 @@ See the <a class="reference external" href="https://www.graphviz.org/pdf/dot.1.p
 <p>To render the graph to an image</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">&quot;file.png&quot;</span><span class="p">)</span>  <span class="c1"># write previously positioned graph to PNG file</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">"file.png"</span><span class="p">)</span>  <span class="c1"># write previously positioned graph to PNG file</span>
 </pre></div>
 </div>
 </div>
@@ -935,13 +935,13 @@ See the <a class="reference external" href="https://www.graphviz.org/pdf/dot.1.p
 </figure>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use `circo` layout to position, write to PostScript file for e.g. embedding</span>
 <span class="c1"># in a LaTeX document</span>
-<span class="n">G</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">&quot;file.ps&quot;</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s2">&quot;circo&quot;</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">"file.ps"</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s2">"circo"</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Or render directly to an image format</span>
-<span class="n">G</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">&quot;file.svg&quot;</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s2">&quot;circo&quot;</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">"file.svg"</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s2">"circo"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

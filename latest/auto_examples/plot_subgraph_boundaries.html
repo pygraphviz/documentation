@@ -67,7 +67,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="2.0.1" />
-    <meta name="docbuild:last-update" content="Aug 03, 2026"/>
+    <meta name="docbuild:last-update" content="Aug 18, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -520,31 +520,31 @@ to download the full example code.</p>
 
 <span class="c1"># A graph in `.dot` format specifying two nodes, each within their own subgraph,</span>
 <span class="c1"># and a bi-directional edge between them</span>
-<span class="n">dot_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="n">dot_str</span> <span class="o">=</span> <span class="s2">"""</span>
 <span class="s2">digraph G {</span>
 <span class="s2">    graph [compound=true];</span>
 
 <span class="s2">    node [shape=box];</span>
 
 <span class="s2">    subgraph cluster_A {</span>
-<span class="s2">        label=&quot;A&quot;;</span>
-<span class="s2">        a1 [pos=&quot;50,100!&quot;];</span>
+<span class="s2">        label="A";</span>
+<span class="s2">        a1 [pos="50,100!"];</span>
 <span class="s2">    }</span>
 
 <span class="s2">    subgraph cluster_B {</span>
-<span class="s2">        label=&quot;B&quot;;</span>
-<span class="s2">        b1 [pos=&quot;200,100!&quot;];</span>
+<span class="s2">        label="B";</span>
+<span class="s2">        b1 [pos="200,100!"];</span>
 <span class="s2">    }</span>
 
 <span class="s2">    a1 -&gt; b1 [lhead=cluster_B, ltail=cluster_A, dir=both];</span>
 
-<span class="s2">    graph [bb=&quot;0,0,300,200&quot;];</span>
+<span class="s2">    graph [bb="0,0,300,200"];</span>
 <span class="s2">}</span>
-<span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">"""</span>
 
 <span class="n">A</span> <span class="o">=</span> <span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="n">dot_str</span><span class="p">)</span>
-<span class="n">A</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="s2">&quot;dot&quot;</span><span class="p">)</span>
-<span class="n">A</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">&quot;subgraph_bdries.png&quot;</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="s2">"dot"</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">"subgraph_bdries.png"</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-subgraph-boundaries-py">

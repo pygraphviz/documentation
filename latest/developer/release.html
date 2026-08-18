@@ -67,7 +67,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="2.0.1" />
-    <meta name="docbuild:last-update" content="Aug 03, 2026"/>
+    <meta name="docbuild:last-update" content="Aug 18, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -527,8 +527,8 @@
 <li><p>Set release variables:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">VERSION</span><span class="o">=&lt;</span><span class="n">version</span> <span class="n">number</span><span class="o">&gt;</span>
 <span class="n">export</span> <span class="n">PREVIOUS</span><span class="o">=&lt;</span><span class="n">previous</span> <span class="n">version</span> <span class="n">number</span><span class="o">&gt;</span>
-<span class="n">export</span> <span class="n">ORG</span><span class="o">=</span><span class="s2">&quot;pygraphviz&quot;</span>
-<span class="n">export</span> <span class="n">REPO</span><span class="o">=</span><span class="s2">&quot;pygraphviz&quot;</span>
+<span class="n">export</span> <span class="n">ORG</span><span class="o">=</span><span class="s2">"pygraphviz"</span>
+<span class="n">export</span> <span class="n">REPO</span><span class="o">=</span><span class="s2">"pygraphviz"</span>
 </pre></div>
 </div>
 <p>If this is a prerelease:</p>
@@ -555,12 +555,12 @@ key value pair <cite>“preferred”: true</cite> to the most recent stable vers
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git add doc/source/release/index.rst ${NOTES}
 git add pygraphviz/__init__.py doc/source/_static/version_switcher.json
 pre-commit run -a
-git commit -m &quot;Designate ${VERSION} release&quot;
+git commit -m "Designate ${VERSION} release"
 </pre></div>
 </div>
 </li>
 <li><p>Tag the release in git:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git tag -s pygraphviz-${VERSION} -m &quot;signed ${VERSION} tag&quot;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git tag -s pygraphviz-${VERSION} -m "signed ${VERSION} tag"
 </pre></div>
 </div>
 <p>If you do not have a gpg key, use -u instead; it is important for
@@ -592,7 +592,7 @@ mv ../pygraphviz-${VERSION} .
 rm -rf stable
 cp -rf pygraphviz-${VERSION} stable
 git add pygraphviz-${VERSION} stable
-git commit -m &quot;Add ${VERSION} docs&quot;
+git commit -m "Add ${VERSION} docs"
 git push  # force push---be careful!
 </pre></div>
 </div>
@@ -602,7 +602,7 @@ git push  # force push---be careful!
 <li><p>Update <code class="docutils literal notranslate"><span class="pre">version</span></code> in <code class="docutils literal notranslate"><span class="pre">pygraphviz/__init__.py</span></code>.</p></li>
 <li><p>Commit changes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">pygraphviz</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
-<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;Bump version&#39;</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">'Bump version'</span>
 <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">main</span>
 </pre></div>
 </div>

@@ -67,7 +67,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="2.0.1" />
-    <meta name="docbuild:last-update" content="Aug 03, 2026"/>
+    <meta name="docbuild:last-update" content="Aug 18, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -517,11 +517,11 @@ to download the full example code.</p>
 <span id="sphx-glr-auto-examples-plot-attributes-py"></span><h1>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">#</a></h1>
 <p>Example illustrating how to set node, edge, and graph attributes for
 visualization.</p>
-<img src="../_images/sphx_glr_plot_attributes_001.png" srcset="../_images/sphx_glr_plot_attributes_001.png" alt="plot attributes" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>strict digraph &quot;&quot; {
+<img src="../_images/sphx_glr_plot_attributes_001.png" srcset="../_images/sphx_glr_plot_attributes_001.png" alt="plot attributes" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>strict digraph "" {
         graph [epsilon=0.001,
                 rankdir=LR
         ];
-        node [label=&quot;\N&quot;];
+        node [label="\N"];
         1       [color=red];
         1 -&gt; 2  [color=green];
         1 -&gt; 3;
@@ -541,13 +541,13 @@ visualization.</p>
 
 <span class="c1"># strict (no parallel edges)</span>
 <span class="c1"># digraph</span>
-<span class="c1"># with attribute rankdir set to &#39;LR&#39;</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="n">directed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rankdir</span><span class="o">=</span><span class="s2">&quot;LR&quot;</span><span class="p">)</span>
+<span class="c1"># with attribute rankdir set to 'LR'</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="n">directed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rankdir</span><span class="o">=</span><span class="s2">"LR"</span><span class="p">)</span>
 <span class="c1"># add node 1 with color red</span>
-<span class="n">A</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<span class="n">A</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">)</span>
 <span class="c1"># add some edges</span>
-<span class="n">A</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"green"</span><span class="p">)</span>
 <span class="n">A</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">A</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">A</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
@@ -555,10 +555,10 @@ visualization.</p>
 <span class="n">A</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="n">A</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="c1"># adjust a graph parameter</span>
-<span class="n">A</span><span class="o">.</span><span class="n">graph_attr</span><span class="p">[</span><span class="s2">&quot;epsilon&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;0.001&quot;</span>
+<span class="n">A</span><span class="o">.</span><span class="n">graph_attr</span><span class="p">[</span><span class="s2">"epsilon"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"0.001"</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">string</span><span class="p">())</span>  <span class="c1"># print dot file to standard output</span>
-<span class="n">A</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="s2">&quot;dot&quot;</span><span class="p">)</span>  <span class="c1"># layout with dot</span>
-<span class="n">A</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">&quot;foo.png&quot;</span><span class="p">)</span>  <span class="c1"># write to file</span>
+<span class="n">A</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="s2">"dot"</span><span class="p">)</span>  <span class="c1"># layout with dot</span>
+<span class="n">A</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">"foo.png"</span><span class="p">)</span>  <span class="c1"># write to file</span>
 </pre></div>
 </div>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-attributes-py">

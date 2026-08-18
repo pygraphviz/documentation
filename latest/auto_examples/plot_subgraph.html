@@ -67,7 +67,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="2.0.1" />
-    <meta name="docbuild:last-update" content="Aug 03, 2026"/>
+    <meta name="docbuild:last-update" content="Aug 18, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -516,7 +516,7 @@ to download the full example code.</p>
 <section class="sphx-glr-example-title" id="subgraph">
 <span id="sphx-glr-auto-examples-plot-subgraph-py"></span><h1>Subgraph<a class="headerlink" href="#subgraph" title="Link to this heading">#</a></h1>
 <p>Specify a subgraph in pygraphviz.</p>
-<img src="../_images/sphx_glr_plot_subgraph_001.png" srcset="../_images/sphx_glr_plot_subgraph_001.png" alt="plot subgraph" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>strict graph &quot;&quot; {
+<img src="../_images/sphx_glr_plot_subgraph_001.png" srcset="../_images/sphx_glr_plot_subgraph_001.png" alt="plot subgraph" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>strict graph "" {
         subgraph s1 {
                 graph [rank=same];
                 4 -- 6;
@@ -545,11 +545,11 @@ to download the full example code.</p>
 <span class="n">A</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">A</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="n">A</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-<span class="c1"># make a subgraph with rank=&#39;same&#39;</span>
-<span class="n">B</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">add_subgraph</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;s1&quot;</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="s2">&quot;same&quot;</span><span class="p">)</span>
-<span class="n">B</span><span class="o">.</span><span class="n">graph_attr</span><span class="p">[</span><span class="s2">&quot;rank&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;same&quot;</span>
+<span class="c1"># make a subgraph with rank='same'</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">add_subgraph</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"s1"</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="s2">"same"</span><span class="p">)</span>
+<span class="n">B</span><span class="o">.</span><span class="n">graph_attr</span><span class="p">[</span><span class="s2">"rank"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"same"</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">string</span><span class="p">())</span>  <span class="c1"># print dot file to standard output</span>
-<span class="n">A</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">&quot;subgraph.png&quot;</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s2">&quot;neato&quot;</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">"subgraph.png"</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s2">"neato"</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-subgraph-py">
