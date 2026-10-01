@@ -5,14 +5,39 @@
         "url": "https://pygraphviz.github.io/documentation/latest/"
     },
     {
-        "name": "1.13 (stable)",
-        "version":"1.13",
+        "name": "2.0.3 (stable)",
+        "version": "2.0.3",
         "url": "https://pygraphviz.github.io/documentation/stable/",
         "preferred": true
     },
     {
+        "name": "2.0.2",
+        "version": "2.0.2",
+        "url": "https://pygraphviz.github.io/documentation/pygraphviz-2.0.2/"
+    },
+    {
+        "name": "2.0.1",
+        "version": "2.0.1",
+        "url": "https://pygraphviz.github.io/documentation/pygraphviz-2.0.1/"
+    },
+    {
+        "name": "2.0",
+        "version": "2.0",
+        "url": "https://pygraphviz.github.io/documentation/pygraphviz-2.0/"
+    },
+    {
+        "name": "1.14",
+        "version": "1.14",
+        "url": "https://pygraphviz.github.io/documentation/pygraphviz-1.14/"
+    },
+    {
+        "name": "1.13",
+        "version": "1.13",
+        "url": "https://pygraphviz.github.io/documentation/pygraphviz-1.13/"
+    },
+    {
         "name": "1.12",
-        "version":"1.12",
+        "version": "1.12",
         "url": "https://pygraphviz.github.io/documentation/pygraphviz-1.12/"
     }
 ]
