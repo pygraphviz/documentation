@@ -630,7 +630,12 @@
                 <span class="n">handle</span> <span class="o">=</span> <span class="n">thing</span>
             <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">thing</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
                 <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">"(strict)?\s*(graph|digraph).*{.*}\s*"</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">pattern</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">thing</span><span class="p">):</span>
+                <span class="c1"># Skip leading DOT comments only when guessing the input type.</span>
+                <span class="c1"># The original text is still passed to Graphviz for parsing.</span>
+                <span class="n">prefix</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">"(?:\s+|//[^\n]*|#[^\n]*|/\*.*?\*/)+"</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">)</span>
+                <span class="n">match</span> <span class="o">=</span> <span class="n">prefix</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">thing</span><span class="p">)</span>
+                <span class="n">start</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">end</span><span class="p">()</span> <span class="k">if</span> <span class="n">match</span> <span class="k">else</span> <span class="mi">0</span>
+                <span class="k">if</span> <span class="n">pattern</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">thing</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
                     <span class="n">string</span> <span class="o">=</span> <span class="n">thing</span>  <span class="c1"># this is a dot format graph in a string</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">filename</span> <span class="o">=</span> <span class="n">thing</span>  <span class="c1"># assume this is a file name</span>
