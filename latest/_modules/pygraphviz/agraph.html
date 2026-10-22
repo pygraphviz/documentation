@@ -505,6 +505,12 @@
 
 <span class="n">_DEFAULT_ENCODING</span> <span class="o">=</span> <span class="s2">"UTF-8"</span>
 
+<span class="c1"># Graphviz's layout stores state (such as the attribute symbols of the graph being</span>
+<span class="c1"># laid out) in process-wide globals that rendering and cleanup read later. Each</span>
+<span class="c1"># Graphviz call is atomic, but a layout -&gt; render -&gt; free sequence must not</span>
+<span class="c1"># interleave with another thread's, with or without the GIL.</span>
+<span class="n">_layout_lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+
 
 <span class="k">class</span><span class="w"> </span><span class="nc">PipeReader</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Read and write pipes using threads."""</span>
@@ -2190,17 +2196,18 @@
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prog</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="n">prog</span> <span class="o">=</span> <span class="n">prog</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">encoding</span><span class="p">)</span>
 
-        <span class="n">gvc</span> <span class="o">=</span> <span class="n">gv</span><span class="o">.</span><span class="n">gvContextWithBuiltins</span><span class="p">()</span>
-        <span class="n">retval</span> <span class="o">=</span> <span class="n">gv</span><span class="o">.</span><span class="n">gvLayout</span><span class="p">(</span><span class="n">gvc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">prog</span><span class="p">)</span>
-        <span class="c1"># gvLayout returns -1 if `prog` is not a valid program.</span>
-        <span class="c1"># TODO: Check other possible return values from gvLayout</span>
-        <span class="c1"># TODO: Catch/suppress msg on stderr from graphviz</span>
-        <span class="k">if</span> <span class="n">retval</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Program </span><span class="si">{</span><span class="n">prog</span><span class="si">}</span><span class="s2"> is not a valid layout program."</span><span class="p">)</span>
-        <span class="n">gv</span><span class="o">.</span><span class="n">gvRender</span><span class="p">(</span><span class="n">gvc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="sa">b</span><span class="s2">"dot"</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">_layout_lock</span><span class="p">:</span>
+            <span class="n">gvc</span> <span class="o">=</span> <span class="n">gv</span><span class="o">.</span><span class="n">gvContextWithBuiltins</span><span class="p">()</span>
+            <span class="n">retval</span> <span class="o">=</span> <span class="n">gv</span><span class="o">.</span><span class="n">gvLayout</span><span class="p">(</span><span class="n">gvc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">prog</span><span class="p">)</span>
+            <span class="c1"># gvLayout returns -1 if `prog` is not a valid program.</span>
+            <span class="c1"># TODO: Check other possible return values from gvLayout</span>
+            <span class="c1"># TODO: Catch/suppress msg on stderr from graphviz</span>
+            <span class="k">if</span> <span class="n">retval</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Program </span><span class="si">{</span><span class="n">prog</span><span class="si">}</span><span class="s2"> is not a valid layout program."</span><span class="p">)</span>
+            <span class="n">gv</span><span class="o">.</span><span class="n">gvRender</span><span class="p">(</span><span class="n">gvc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="sa">b</span><span class="s2">"dot"</span><span class="p">)</span>
 
-        <span class="n">gv</span><span class="o">.</span><span class="n">gvFreeLayout</span><span class="p">(</span><span class="n">gvc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
-        <span class="n">gv</span><span class="o">.</span><span class="n">gvFreeContext</span><span class="p">(</span><span class="n">gvc</span><span class="p">)</span>
+            <span class="n">gv</span><span class="o">.</span><span class="n">gvFreeLayout</span><span class="p">(</span><span class="n">gvc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+            <span class="n">gv</span><span class="o">.</span><span class="n">gvFreeContext</span><span class="p">(</span><span class="n">gvc</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">has_layout</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">return</span></div>
@@ -2292,37 +2299,42 @@
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prog</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="n">prog</span> <span class="o">=</span> <span class="n">prog</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">encoding</span><span class="p">)</span>
 
-        <span class="c1"># Start the drawing</span>
-        <span class="n">gvc</span> <span class="o">=</span> <span class="n">gv</span><span class="o">.</span><span class="n">gvContextWithBuiltins</span><span class="p">()</span>
-        <span class="n">G</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle</span>
+        <span class="k">with</span> <span class="n">_layout_lock</span><span class="p">:</span>
+            <span class="c1"># Start the drawing</span>
+            <span class="n">gvc</span> <span class="o">=</span> <span class="n">gv</span><span class="o">.</span><span class="n">gvContextWithBuiltins</span><span class="p">()</span>
+            <span class="n">G</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle</span>
 
-        <span class="c1"># Layout</span>
-        <span class="n">err</span> <span class="o">=</span> <span class="n">gv</span><span class="o">.</span><span class="n">gvLayout</span><span class="p">(</span><span class="n">gvc</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">prog</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">err</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Graphviz raised a layout error."</span><span class="p">)</span>
-            <span class="n">prog</span> <span class="o">=</span> <span class="n">prog</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">encoding</span><span class="p">)</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Can't find prog=</span><span class="si">{</span><span class="n">prog</span><span class="si">}</span><span class="s2"> in this graphviz installation"</span><span class="p">)</span>
+            <span class="c1"># Layout</span>
+            <span class="n">err</span> <span class="o">=</span> <span class="n">gv</span><span class="o">.</span><span class="n">gvLayout</span><span class="p">(</span><span class="n">gvc</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">prog</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">err</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Graphviz raised a layout error."</span><span class="p">)</span>
+                <span class="n">prog</span> <span class="o">=</span> <span class="n">prog</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">encoding</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"Can't find prog=</span><span class="si">{</span><span class="n">prog</span><span class="si">}</span><span class="s2"> in this graphviz installation"</span>
+                <span class="p">)</span>
 
-        <span class="c1"># Render</span>
-        <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">out</span> <span class="o">=</span> <span class="n">gv</span><span class="o">.</span><span class="n">gvRenderData</span><span class="p">(</span><span class="n">gvc</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Graphviz Error creating dot representation:</span><span class="si">{</span><span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-            <span class="n">err</span><span class="p">,</span> <span class="n">dot_string</span> <span class="o">=</span> <span class="n">out</span>
+            <span class="c1"># Render</span>
+            <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">out</span> <span class="o">=</span> <span class="n">gv</span><span class="o">.</span><span class="n">gvRenderData</span><span class="p">(</span><span class="n">gvc</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">"Graphviz Error creating dot representation:</span><span class="si">{</span><span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+                    <span class="p">)</span>
+                <span class="n">err</span><span class="p">,</span> <span class="n">dot_string</span> <span class="o">=</span> <span class="n">out</span>
+                <span class="n">gv</span><span class="o">.</span><span class="n">gvFreeLayout</span><span class="p">(</span><span class="n">gvc</span><span class="p">,</span> <span class="n">G</span><span class="p">)</span>
+                <span class="n">gv</span><span class="o">.</span><span class="n">gvFreeContext</span><span class="p">(</span><span class="n">gvc</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">dot_string</span>
+
+            <span class="c1"># path is string holding the filename, a file handle, or pathlib.Path</span>
+            <span class="n">fh</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_fh</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span>
+            <span class="n">err</span> <span class="o">=</span> <span class="n">gv</span><span class="o">.</span><span class="n">gvRender</span><span class="p">(</span><span class="n">gvc</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">fh</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">err</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Graphviz raised a render error. Maybe bad format?"</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
             <span class="n">gv</span><span class="o">.</span><span class="n">gvFreeLayout</span><span class="p">(</span><span class="n">gvc</span><span class="p">,</span> <span class="n">G</span><span class="p">)</span>
-            <span class="n">gv</span><span class="o">.</span><span class="n">gvFreeContext</span><span class="p">(</span><span class="n">gvc</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">dot_string</span>
-
-        <span class="c1"># path is string holding the filename, a file handle, or pathlib.Path</span>
-        <span class="n">fh</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_fh</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span>
-        <span class="n">err</span> <span class="o">=</span> <span class="n">gv</span><span class="o">.</span><span class="n">gvRender</span><span class="p">(</span><span class="n">gvc</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">fh</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">err</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Graphviz raised a render error. Maybe bad format?"</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-            <span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-        <span class="n">gv</span><span class="o">.</span><span class="n">gvFreeLayout</span><span class="p">(</span><span class="n">gvc</span><span class="p">,</span> <span class="n">G</span><span class="p">)</span>
-        <span class="n">gv</span><span class="o">.</span><span class="n">gvFreeContext</span><span class="p">(</span><span class="n">gvc</span><span class="p">)</span></div>
+            <span class="n">gv</span><span class="o">.</span><span class="n">gvFreeContext</span><span class="p">(</span><span class="n">gvc</span><span class="p">)</span></div>
 
 
     <span class="c1"># some private helper functions</span>
