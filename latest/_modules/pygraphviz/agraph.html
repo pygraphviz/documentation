@@ -64,7 +64,7 @@
   <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="2.0.4" />
-    <meta name="docbuild:last-update" content="Nov 07, 2026"/>
+    <meta name="docbuild:last-update" content="Nov 25, 2026"/>
   
     
     <script src="../../_static/searchtools.js"></script>
@@ -2227,6 +2227,7 @@
 <span class="sd">        cases, one should explicitly set the `format` parameter; otherwise, it</span>
 <span class="sd">        will default to 'dot'.</span>
 
+<span class="sd">        Binary file-like objects, including io.BytesIO, are supported.</span>
 <span class="sd">        If path is None, the result is returned as a Bytes object.</span>
 
 <span class="sd">        Formats (not all may be available on every system depending on</span>
@@ -2315,7 +2316,7 @@
                 <span class="p">)</span>
 
             <span class="c1"># Render</span>
-            <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"write"</span><span class="p">):</span>
                 <span class="n">out</span> <span class="o">=</span> <span class="n">gv</span><span class="o">.</span><span class="n">gvRenderData</span><span class="p">(</span><span class="n">gvc</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
                     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
@@ -2324,7 +2325,10 @@
                 <span class="n">err</span><span class="p">,</span> <span class="n">dot_string</span> <span class="o">=</span> <span class="n">out</span>
                 <span class="n">gv</span><span class="o">.</span><span class="n">gvFreeLayout</span><span class="p">(</span><span class="n">gvc</span><span class="p">,</span> <span class="n">G</span><span class="p">)</span>
                 <span class="n">gv</span><span class="o">.</span><span class="n">gvFreeContext</span><span class="p">(</span><span class="n">gvc</span><span class="p">)</span>
-                <span class="k">return</span> <span class="n">dot_string</span>
+                <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">dot_string</span>
+                <span class="n">path</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">dot_string</span><span class="p">)</span>
+                <span class="k">return</span>
 
             <span class="c1"># path is string holding the filename, a file handle, or pathlib.Path</span>
             <span class="n">fh</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_fh</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span>

@@ -67,7 +67,7 @@
   <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="2.0.4" />
-    <meta name="docbuild:last-update" content="Nov 07, 2026"/>
+    <meta name="docbuild:last-update" content="Nov 25, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -1070,7 +1070,8 @@ be used.</p>
 then the method for discovering the format will not work.  In such
 cases, one should explicitly set the <cite>format</cite> parameter; otherwise, it
 will default to ‘dot’.</p>
-<p>If path is None, the result is returned as a Bytes object.</p>
+<p>Binary file-like objects, including io.BytesIO, are supported.
+If path is None, the result is returned as a Bytes object.</p>
 <p>Formats (not all may be available on every system depending on
 how Graphviz was built)</p>
 <blockquote>
